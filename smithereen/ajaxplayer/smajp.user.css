@@ -1,0 +1,80 @@
+/* ==UserStyle==
+@name           Smithereen AJAX Player
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         koke228
+==/UserStyle== */
+@-moz-document domain("friends.grishka.me") {
+
+    .sillyPlayer .playBtn .playImg {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAAAXCAYAAABgWeOzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAEASURBVGhD7ZjhDcIgEEaLc+kiuoROokvoIroXlgLJRRJ68B388XsJKZSmub5e6BXnvV9IH8651KtzSEcyEEqeACVXCMtBbgiUrORXdIv4lg9fvhB5re+1HWN347O2U+xW56pcbm6L7Xn3UMqt9ylieD1iDOdrGV+e26Mnk5FyRAYZkOPanIosG6CIISRhSsTu+HqXC/RhhmEg2hxkTaZoJeiHj6IVWFQXFL2DhWSyg4VkrFIfCFrSWYFKpmAFiGQKVtIrmYIb6JGMPET4VZbIcW1OBSI47UUMiY+b9om84SN9hHN5LPuBURtERNAi2aKE+0takpOSJ0DJE6Dk4SzLF4LDUDSNkQjwAAAAAElFTkSuQmCC")
+    } /* сорянчик что не svg, я просто не умею */
+    .sillyPlayer {
+      z-index: 200;
+      cursor: default;
+      width: 154px;
+      bottom: auto;
+      display: block;
+      position: fixed;
+      /* top: 49px; */
+      /* right: 80px; */
+      height: 34px;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -khtml-border-radius: 3px;
+      overflow: hidden;
+      background-color: #dde8d9;
+      opacity: 0.85;
+      filter: alpha(opacity=70);
+      -webkit-transition: opacity 200ms ease-out, background-color 200ms ease-out, top 75ms ease-out;
+      -moz-transition: opacity 200ms ease-out, background-color 200ms ease-out, top 75ms ease-out;
+      -o-transition: opacity 200ms ease-out, background-color 200ms ease-out, top 75ms ease-out;
+      transition: opacity 200ms ease-out, background-color 200ms ease-out, top 75ms ease-out;
+    }
+    .sillyPlayer * {
+        user-select: none;
+    }
+    .sillyPlayer:hover {
+        opacity: 1;
+    }
+    .sillyPlayer .wrap {
+        color: #4e7000;
+        width: 100%;
+        height: 100%;
+    }
+    .sillyPlayer .playBtn {
+        position: relative;
+        padding: 9px 7px;
+        width: 30px;
+        height: 34px;
+        float: left;
+    }
+    .sillyPlayer .playBtn .playImg {
+        height: 14px;
+        width: 14px;
+        display: block;
+        background-position: 44px -26px;
+    }
+    .sillyPlayer .playBtn.playing .playImg,
+    .sillyPlayer .playBtn.load .playImg {
+        background-position: 24px -26px;
+    }
+    .sillyPlayer .trackInfo {
+        padding: 3px 8px 5px 0px;
+        cursor: pointer;
+        float: left;
+    }
+    .sillyPlayer .trackInfo .trackPerformer, .sillyPlayer .trackInfo .trackName {
+      line-height: 13px;
+      width: 115px;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .sillyPlayer .trackInfo .trackPerformer {
+        font-weight: bold;
+    }
+}
