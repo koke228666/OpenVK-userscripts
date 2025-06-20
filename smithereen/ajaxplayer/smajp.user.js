@@ -102,17 +102,11 @@ AudioPlayer.refreshAjaxData = function() {
   AudioPlayer.updateAjaxPos();
 }
 
-AudioPlayer.stop = function() {
+AudioPlayer.prototype.onPlayFinish = function() {
   const apinst = AudioPlayer.instance;
   const sillybtn = document.querySelector('.sillyPlayer .playBtn');
-  const id = apinst.curAudioID
-  if (!id) return
-  if (apinst.mgr && !apinst.mgr.paused()) apinst.mgr.stopAudio()
-  apinst.state = AudioPlayerState.STOP
   sillybtn.classList.remove('playing');
-  apinst.forEachControl(apinst.setGraphics.bind(this))
-  apinst.setAudioID(null)
-  apinst.controlsForCurrentAudio = []
+  apinst.stop();
 }
 
 AudioPlayer.playOrPause = function(id) {
